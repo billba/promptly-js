@@ -1,9 +1,9 @@
 import { Promiseable } from 'botbuilder';
-import { Topic } from "./topic";
+import { Topic, TopicState } from "./topic";
 import { Validator } from "./validator/validator";
 
 // PromptState - Used to persist state required to recreate the Prompt between turns. 
-export interface PromptState {
+export interface PromptState extends TopicState {
     // turns - The current turn count. 0 is the inital turn, >0 is subsequent turns.
     turns?: number;
 }

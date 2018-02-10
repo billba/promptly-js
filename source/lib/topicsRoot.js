@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const conversationTopic_1 = require("./conversationTopic");
+const topic_1 = require("./topic");
 // TopicsRoot - A specialized ConversationTopic used to anchor a Topics based conversation model
 //  in state.
-class TopicsRoot extends conversationTopic_1.ConversationTopic {
+class TopicsRoot extends topic_1.Topic {
     constructor(context) {
         if (!context.state.conversation.topicsRoot) {
             // Initialize root ConversationTopic state and persist it to conversatin state

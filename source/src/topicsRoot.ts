@@ -1,8 +1,8 @@
-import { ConversationTopic, ConversationTopicState } from './conversationTopic';
+import { Topic, TopicState } from './topic';
 
 // TopicsRootState - Used to persist state required to recreate the TopicsRoot 
 //  between turns. 
-export interface TopicsRootState<S extends ConversationTopicState> {
+export interface TopicsRootState<S extends TopicState> {
     // S - The state of the ConvsationTopic that serves as the root for 
     //  all Topics in the conversation model. 
     state?: S;
@@ -10,13 +10,13 @@ export interface TopicsRootState<S extends ConversationTopicState> {
 
 declare global {
     export interface ConversationState {
-        topicsRoot?: TopicsRootState<ConversationTopicState>;
+        topicsRoot?: TopicsRootState<TopicState>;
     }
 }
 
 // TopicsRoot - A specialized ConversationTopic used to anchor a Topics based conversation model
 //  in state.
-export abstract class TopicsRoot extends ConversationTopic<ConversationTopicState> {
+export abstract class TopicsRoot extends Topic<TopicState> {
     public constructor(context: BotContext) {
 
         if (!context.state.conversation.topicsRoot) {

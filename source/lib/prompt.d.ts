@@ -1,6 +1,6 @@
-import { Topic } from "./topic";
+import { Topic, TopicState } from "./topic";
 import { Validator } from "./validator/validator";
-export interface PromptState {
+export interface PromptState extends TopicState {
     turns?: number;
 }
 export declare class Prompt<V> extends Topic<PromptState, V> {
