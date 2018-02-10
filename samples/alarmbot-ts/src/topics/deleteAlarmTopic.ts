@@ -1,7 +1,7 @@
 import { Alarm, showAlarms } from '../alarms';
-import { ConversationTopic, ConversationTopicState, Prompt, Validator } from 'promptly-bot';
+import { Topic, TopicState, Prompt, Validator } from 'promptly-bot';
 
-export interface DeleteAlarmTopicState extends ConversationTopicState {
+export interface DeleteAlarmTopicState extends TopicState {
     alarms?: Alarm[];
     alarmIndex?: number;
     alarm?: Partial<Alarm>;
@@ -14,7 +14,7 @@ export interface DeleteAlarmTopicValue {
     deleteConfirmed: boolean;
 }
 
-export class DeleteAlarmTopic extends ConversationTopic<DeleteAlarmTopicState, DeleteAlarmTopicValue> {
+export class DeleteAlarmTopic extends Topic<DeleteAlarmTopicState, DeleteAlarmTopicValue> {
 
     public constructor(name: string, alarms: Alarm[], state: DeleteAlarmTopicState = { alarms: [] as Alarm[], alarm: {} as Alarm, activeTopic: undefined }) {
         super(state);

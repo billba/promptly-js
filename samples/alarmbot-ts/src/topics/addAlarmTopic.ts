@@ -1,11 +1,11 @@
 import { Alarm } from '../alarms';
-import { ConversationTopic, ConversationTopicState, Prompt, Validator } from 'promptly-bot';
+import { Topic, TopicState, Prompt, Validator } from 'promptly-bot';
 
-export interface AddAlarmTopicState extends ConversationTopicState {
+export interface AddAlarmTopicState extends TopicState {
     alarm: Alarm;
 }
 
-export class AddAlarmTopic extends ConversationTopic<AddAlarmTopicState, Alarm> {
+export class AddAlarmTopic extends Topic<AddAlarmTopicState, Alarm> {
 
     public constructor(state: AddAlarmTopicState = { alarm: {} as Alarm, activeTopic: undefined }) {
         super(state);    
